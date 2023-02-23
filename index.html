@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Website</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="assets/logo.jpg" class="logo" alt="">
+        <div class="navbut"><a href="index.html">Home</a></div>
+        <div class="navbut"><a href="profile.html">Our Profile</a></div>
+        <div class="navbut">Portofolio</div>
+        <div class="navbut">Message Us</div> 
+    </nav>
+    <main class="hero">  
+        <div class="container">
+            <h3 class="hero-title">Hi <span id="nama"></span>, Welcome To Website</h3>
+            <script>
+                var name = prompt("Masukan Nama Kamu");
+                document.getElementById("nama").innerText = name;
+            </script>
+        <p>
+        Shanghai Moonton Technology Co. Ltd. sebelumnya bernama YoungJoy Technology Pte. Ltd., adalah sebuah
+        pengembang dan penerbit permainan video yang berkantor pusat di Shanghai, Tiongkok. Didirikan pada bulan
+        April 2014, perusahaan ini terkenal berkat permainan multiplayer online battle
+        arena (MOBA) Mobile Legends: Bang Bang yang mereka luncurkan pada bulan Juli 2016. Pada tanggal 22 Maret 
+        2021, ByteDance resmi mengakuisisi Moonton dengan harga US$4 milyar. Moonton didirikan pada bulan April
+        2014 di Distrik Minhang, Shanghai, Tiongkok oleh Justin Yuan dan Watson Xu Zhenhua, yang saat ini
+        sama-sama menjadi CEO Moonton. Pada tanggal 6 April 2015, perusahaan ini meluncurkan permainan video
+        pertamanya, yakni permainan pertahanan menara berjudul Magic Rush: Heroes. Setelah selesai mengembangkan
+        permainan video tersebut, Moonton mengembangkan sebuah permainan multiplayer online 
+        battle arena (MOBA) yang kemudian diberi nama Mobile Legends.
+        </p>
+        <div class="slider">
+            <img class="img-slideshow" src="assets/game.jpg">
+            <img class="img-slideshow" src="assets/game1.jpg">
+            <img class="img-slideshow" src="assets/game2.jpg">
+            <button onclick="plusDivs(-1)">Previous</button>
+            <button onclick="plusDivs(1)">Next</button>
+        </div>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n){
+                showDivs((slideIndex += n));
+            }
+
+            function showDivs(n){
+                var i;
+                var imgList = document.getElementsByClassName('img-slideshow');
+                if (n > imgList.length) slideIndex = 1;
+                else if (n < 1) slideIndex = imgList.length;
+
+                for(i = 0; i < imgList.length; i++){
+                    imgList[i].style.display = 'none';
+                }
+
+                imgList[slideIndex - 1].style.display = 'block';
+            }
+
+            setInterval(() => {
+                plusDivs(1);
+            }, 1000);
+        </script>
+        </main>
+    <main class="headquarter-all">
+        <section class="headquarter">
+            <div class="container">
+            <div class="head">
+                <h1 class="headquarter-title">Our Headquarter</h1>
+                <div class="headquarter-gallery">
+                    <div class="city">
+                        <img src="assets/jakarta.jpg" alt="" />
+                        <h3>Jakarta</h3>
+                    </div>
+                    <div class="city">
+                        <img src="assets/bandung.jpg"  alt="" />
+                        <h3>Bandung</h3>
+                    </div>
+                    <div class="city">
+                        <img src="assets/surabaya.jpg"  alt="" />
+                        <h3>Surabaya</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <main class="Message-Us">
+        <div class="head">
+        <h1 class="message-title">Message Us</h1>
+        <div class="form-head">
+        <div class="form-section">
+            <form class="message-form" name="message-form" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td><input placeholder="Nama" type="text" name="full-name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>:</td>
+                        <td><input type="date" name="birth-date" /></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>:</td>
+                        <td><input type="radio" id="male" name="gender" value="male" />
+                            <label for="male">Laki-Laki</label>
+                            <input type="radio" id="female" name="gender" value="male" />
+                            <label for="female">Perempuan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p class="label-pesan">Pesan</p></td>
+                        <td>:</td>
+                        <td><textarea placeholder="Pesan" name="messages"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" value="Submit" /></td>
+                    </tr>
+                    </table>
+            </form>
+            <script>
+                function validateForm() {
+                    var name = document.forms["message-form"]["full-name"].value;
+                    var date = document.forms["message-form"]["birth-date"].value;
+                    var gender = document.forms["message-form"]["gender"].value;
+                    var messages = document.forms["message-form"]["messages"].value;            
+                    if (name == "" || date == "" || gender == "" || messages ==""){
+                        alert("Tidak boleh ada yang kosong");
+                        return false;
+                    }
+                    document.getElementById("sender-full-name").innerText = name;
+                    document.getElementById("sender-birth-date").innerText = date;
+                    document.getElementById("sender-gender").innerText = gender;
+                    document.getElementById("sender-messages").innerText = messages;
+                    return false;
+                }
+            </script>
+        </div>
+        <div class="output-form">
+            <table class="table-output">
+                <tr>
+                    <td>Nama</td>
+                    <td> : </td>
+                    <td><span id="sender-full-name"> </span></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td> : </td>
+                    <td><span id="sender-birth-date"> </span></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td> : </td>
+                    <td><span id="sender-gender"> </span></td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td> : </td>
+                    <td><span id="sender-messages"> </span></td>
+                </tr>
+                </table>
+        </div>
+    </div>
+    </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <small>Created By &copy; <a>Heru Setiawan</a></small>
+        </div>
+    </footer>
+</body>
+</html>
