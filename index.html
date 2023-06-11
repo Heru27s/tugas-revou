@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas revou membuat website sederhana</title>
+    <title>Moonton | Home</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <nav class="navbar">
-        <img src="assets/logo.jpg" class="logo" alt="">
+        <img src="assets/logo.jpg" class="logo" alt="moonton">
         <div class="navbut"><a href="index.html">Home</a></div>
-        <div class="navbut"><a href="profile.html">Our Profile</a></div>
-        <div class="navbut">Portofolio</div>
-        <div class="navbut">Message Us</div> 
+        <div class="navbut"><a href="about.html">About Us</a></div>
+        <div class="navbut"><a href="profile.html">Profile</a></div>
+        <div class="navbut"><a href="#message">Message Us</a></div> 
     </nav>
     <main class="hero">  
         <div class="container">
-            <h3 class="hero-title">Hi <span id="nama"></span>, Welcome To Website</h3>
+            <h3 class="hero-title">Hello Sranger <span id="nama"></span>, Welcome to my website</h3>
         <p>
         Shanghai Moonton Technology Co. Ltd. sebelumnya bernama YoungJoy Technology Pte. Ltd., adalah sebuah
         pengembang dan penerbit permainan video yang berkantor pusat di Shanghai, Tiongkok. Didirikan pada bulan
@@ -62,7 +62,7 @@
             </div>
         </section>
     </main>
-    <main class="Message-Us">
+    <main class="Message-Us" id="message">
         <div class="head">
         <h1 class="message-title">Message Us</h1>
         <div class="form-head">
@@ -98,23 +98,6 @@
                     </tr>
                     </table>
             </form>
-            <script>
-                function validateForm() {
-                    var name = document.forms["message-form"]["full-name"].value;
-                    var date = document.forms["message-form"]["birth-date"].value;
-                    var gender = document.forms["message-form"]["gender"].value;
-                    var messages = document.forms["message-form"]["messages"].value;            
-                    if (name == "" || date == "" || gender == "" || messages ==""){
-                        alert("Tidak boleh ada yang kosong");
-                        return false;
-                    }
-                    document.getElementById("sender-full-name").innerText = name;
-                    document.getElementById("sender-birth-date").innerText = date;
-                    document.getElementById("sender-gender").innerText = gender;
-                    document.getElementById("sender-messages").innerText = messages;
-                    return false;
-                }
-            </script>
         </div>
         <div class="output-form">
             <table class="table-output">
